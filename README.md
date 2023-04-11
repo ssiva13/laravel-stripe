@@ -57,6 +57,18 @@ You can install the package via composer from you project root in two ways:
 Ssiva\LaravelStripe\StripePayServiceProvider::class,
 ```
 
+- Open your `config/services.php` and add the following to the array
+
+```php
+    'stripe' => [
+        'key' => env('STRIPE_API_KEY'),
+        'secret' => env('STRIPE_API_SECRET'),
+        'success_url' => env('STRIPE_SUCCESS_URL'),
+        'cancel_url' => env('STRIPE_FAIL_URL'),
+        'redirect_url' => env('STRIPE_REDIRECT_URL'),
+    ],
+```
+
 To use the package, you will need to set the following in your `.env` 
 
 ```dotenv
